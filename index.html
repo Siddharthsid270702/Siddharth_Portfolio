@@ -5,26 +5,95 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Personal Portfolio</title>
+  <title>Personal Portfolio</title>
 
- 
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-
- 
   <link rel="stylesheet" href="./assets/css/style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Projects page ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .project-card {
+      background: var(--border-gradient-onyx, #383838);
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    .project-card-img {
+      width: 100%;
+      height: 175px;
+      object-fit: cover;
+      display: block;
+      background: #2b2b2b;
+    }
+
+    .project-card-body {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .project-card-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white-2, #e0e0e0);
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .project-card-desc {
+      font-size: 13px;
+      color: var(--light-gray-70, #aaa);
+      margin: 0;
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .project-card-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--orange-yellow-crayola, #e9c46a);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: opacity 0.2s;
+    }
+
+    .project-card-link:hover {
+      opacity: 0.75;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
 
-  
-
   <main>
 
-   
+    <!-- ───────────── SIDEBAR ───────────── -->
     <aside class="sidebar" data-sidebar>
 
       <div class="sidebar-info">
@@ -34,14 +103,11 @@
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="SIDDHARTH">SIDDHARTH</h1>
-
-          
+          <h1 class="name" title="SIDDHARTH">SIDDHARTH A</h1>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
           <span>Show Contacts</span>
-
           <ion-icon name="chevron-down"></ion-icon>
         </button>
 
@@ -54,59 +120,43 @@
         <ul class="contacts-list">
 
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="mail-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Email</p>
-
-              <a href="mailto:siddharthsiddhu440@gmail.com" class="contact-link" style="size: 2px;">siddharthsiddhu440@gmail.com</a>
+              <a href="mailto:siddharthsiddhu440@gmail.com" class="contact-link">siddharthsiddhu440@gmail.com</a>
             </div>
-
           </li>
 
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="phone-portrait-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Phone</p>
-
-              <a href="Phone:9080052230" class="contact-link">9080052230</a>
+              <a href="tel:9080052230" class="contact-link">9080052230</a>
             </div>
-
           </li>
 
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="calendar-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Birthday</p>
-
               <time datetime="2002-07-27">July 27, 2002</time>
             </div>
-
           </li>
 
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="location-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Location</p>
-
               <address>Vellore, Tamilnadu, India</address>
             </div>
-
           </li>
 
         </ul>
@@ -127,38 +177,39 @@
             </a>
           </li>
 
-          
-
         </ul>
 
       </div>
 
     </aside>
 
+    <!-- ───────────── MAIN CONTENT ───────────── -->
     <div class="main-content">
 
-
+      <!-- ── NAVBAR ── -->
       <nav class="navbar">
-
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link active" data-nav-link>About</button>
           </li>
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
 
-
-          
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Projects</button>
+          </li>
 
         </ul>
-
       </nav>
 
 
-      <article class="about  active" data-page="about">
+      <!-- ═══════════════════════════════════
+           ABOUT
+      ════════════════════════════════════ -->
+      <article class="about active" data-page="about">
 
         <header>
           <h2 class="h2 article-title">About me</h2>
@@ -166,228 +217,160 @@
 
         <section class="about-text">
           <p>
-           MCA graduate with hands-on experience building full-stack web applications using Python, FastAPI, React, and PostgreSQL. Proficient in REST
-API development, machine learning model integration, IoT systems, and cloud deployment. Strong foundation in object-oriented programming,
-DBMS, and SDLC. Seeking entry-level roles as a Software Developer, Associate Developer, or Application Developer.
-
-
+            MCA graduate with hands-on experience building full-stack web applications using Python, FastAPI, React,
+            and PostgreSQL. Proficient in REST API development, machine learning model integration, IoT systems, and
+            cloud deployment. Strong foundation in object-oriented programming, DBMS, and SDLC. Seeking entry-level
+            roles as a Software Developer, Associate Developer, or Application Developer.
           </p>
-
-          
         </section>
 
-
+        <!-- Languages -->
         <section class="service">
 
           <h3 class="h3 service-title">Languages Known</h3>
 
           <ul class="service-list">
 
-
- <li class="service-item">
-
+            <li class="service-item">
               <div class="service-icon-box">
-                <img src="./assets/images/python.svg" alt="camera icon" width="40">
+                <img src="./assets/images/python.svg" alt="Python" width="40">
               </div>
-
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Python</h4>
-
-                
               </div>
-
-            </li>
-
-            
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/sql_logo.png
-                " alt="design icon" width="50">
-              </div>
-
-              <div class="service-content-box">
-                <h1 class="h4 service-item-title">SQL</h1>
-                <i class="fa-brands fa-java"></i>
-                
-              </div>
-
-            </li>
-
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/javascript.svg" alt="javascript" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Javascript</h4>
-
-                
-              </div>
-
             </li>
 
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./assets/images/html.svg" alt="html icon" width="40">
+                <img src="./assets/images/sql_logo.png" alt="SQL" width="50">
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Html 5</h4>
-
-                
+                <h4 class="h4 service-item-title">SQL</h4>
               </div>
-
             </li>
-
-            
 
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./assets/images/css.svg" alt="camera icon" width="40">
+                <img src="./assets/images/javascript.svg" alt="JavaScript" width="40">
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Css</h4>
-
-                
+                <h4 class="h4 service-item-title">JavaScript</h4>
               </div>
-
             </li>
-
-
-
-            
-
-           
-
 
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./assets/images/mobile.svg" alt="mobile app icon" width="40">
+                <img src="./assets/images/html.svg" alt="HTML" width="40">
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Android application Development</h4>
-
-               
+                <h4 class="h4 service-item-title">HTML 5</h4>
               </div>
-
             </li>
 
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/css.svg" alt="CSS" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">CSS</h4>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/mobile.svg" alt="Android" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Android Application Development</h4>
+              </div>
+            </li>
 
           </ul>
 
         </section>
 
-
+        <!-- Certifications -->
         <section class="service">
 
           <h3 class="h3 service-title">Certifications</h3>
 
           <ul class="service-list">
 
-            <li class="service-item" onclick="window.location.href = 'https://www.coursera.org/account/accomplishments/verify/DFKPLLXYBLLE?utm_source=ios&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course'">
+            <li class="service-item" style="cursor:pointer;"
+              onclick="window.open('https://www.coursera.org/account/accomplishments/verify/DFKPLLXYBLLE?utm_source=ios&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course', '_blank')">
               <div class="service-icon-box">
-                  <img src="./assets/images/data visual.svg" alt="design icon" width="50">
+                <img src="./assets/images/data visual.svg" alt="Data Visualisation" width="50">
               </div>
               <div class="service-content-box">
-                  <h1 class="h4 service-item-title">Data visualisation <span>(Coursera)</span></h1>
-               
-                  <br>
-                  <p style="color: white;">click to view</p>
+                <h4 class="h4 service-item-title">Data Visualisation <span>(Coursera)</span></h4>
+                <p style="color:white;">click to view</p>
               </div>
-          </li>
-          
+            </li>
 
-          <li class="service-item" onclick="window.location.href = 'https://courses.cognitiveclass.ai/certificates/173650af19724acfb066fadbc1ebb48d'">
-            <div class="service-icon-box">
-                <img src="./assets/images/ml.svg" alt="design icon" width="50">
-            </div>
-            <div class="service-content-box">
-                <h1 class="h4 service-item-title">Machine learning with python
-                  <span>(Coursera)</span></h1>
-             
-                <br>
-                <p style="color: white;">click to view</p>
-            </div>
-        </li>
+            <li class="service-item" style="cursor:pointer;"
+              onclick="window.open('https://courses.cognitiveclass.ai/certificates/173650af19724acfb066fadbc1ebb48d', '_blank')">
+              <div class="service-icon-box">
+                <img src="./assets/images/ml.svg" alt="ML" width="50">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Machine Learning with Python <span>(Coursera)</span></h4>
+                <p style="color:white;">click to view</p>
+              </div>
+            </li>
 
-            
+            <li class="service-item" style="cursor:pointer;"
+              onclick="window.open('https://drive.google.com/file/d/1G0I1WQh1ukMoLuQGfryVXEXzcQgI5_93/view?usp=drive_link', '_blank')">
+              <div class="service-icon-box">
+                <img src="./assets/images/router.svg" alt="Networking" width="50">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Networking Cardinals <span>(VIT Vellore)</span></h4>
+                <p style="color:white;">click to view</p>
+              </div>
+            </li>
 
-        <li class="service-item" onclick="window.location.href = 'https://drive.google.com/file/d/1G0I1WQh1ukMoLuQGfryVXEXzcQgI5_93/view?usp=drive_link'">
-          <div class="service-icon-box">
-              <img src="./assets/images/router.svg" alt="design icon" width="50">
-          </div>
-          <div class="service-content-box">
-              <h1 class="h4 service-item-title">Networking cardinals
-                <span>(VIT Vellore)</span></h1>
-           
-              <br>
-              <p style="color: white;">click to view</p>
-          </div>
-      </li>
+            <li class="service-item" style="cursor:pointer;"
+              onclick="window.open('https://learn.nvidia.com/certificates?id=pGZPVoU0S9Kyoft7KhPJIQ', '_blank')">
+              <div class="service-icon-box">
+                <img src="./assets/images/nvidia.svg" alt="Nvidia" width="50">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Fundamentals of Deep Learning <span>(Nvidia)</span></h4>
+                <p style="color:white;">click to view</p>
+              </div>
+            </li>
 
+            <li class="service-item" style="cursor:pointer;"
+              onclick="window.open('https://www.coursera.org/account/accomplishments/verify/ET7L9FFBCGFX?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course', '_blank')">
+              <div class="service-icon-box">
+                <img src="./assets/images/ibm.svg" alt="IBM" width="50">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Introduction to DevOps <span>(IBM)</span></h4>
+                <p style="color:white;">click to view</p>
+              </div>
+            </li>
 
-      <li class="service-item" onclick="window.location.href = 'https://learn.nvidia.com/certificates?id=pGZPVoU0S9Kyoft7KhPJIQ'">
-        <div class="service-icon-box">
-            <img src="./assets/images/nvidia.svg" alt="design icon" width="50">
-        </div>
-        <div class="service-content-box">
-            <h1 class="h5 service-item-title">Fundamentals of Deep Learning
-              <span>(nvidia)</span></h1>
-         
-            <br>
-            <p style="color: white;">click to view</p>
-        </div>
-    </li>
-
-
-
-    <li class="service-item" onclick="window.location.href = 'https://www.coursera.org/account/accomplishments/verify/ET7L9FFBCGFX?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course'">
-      <div class="service-icon-box">
-          <img src="./assets/images/ibm.svg" alt="design icon" width="50">
-      </div>
-      <div class="service-content-box">
-          <h1 class="h5 service-item-title">Introduction to DevOps
-            <span>(IBM)</span></h1>
-       
-          <br>
-          <p style="color: white;">click to view</p>
-      </div>
-  </li>
+          </ul>
 
         </section>
 
-
+        <!-- Modal -->
         <div class="modal-container" data-modal-container>
-
           <div class="overlay" data-overlay></div>
-
           <section class="testimonials-modal">
-
             <button class="modal-close-btn" data-modal-close-btn>
               <ion-icon name="close-outline"></ion-icon>
             </button>
-
-            
-
-            
-
           </section>
-
         </div>
-
-
 
       </article>
 
+
+      <!-- ═══════════════════════════════════
+           RESUME
+      ════════════════════════════════════ -->
       <article class="resume" data-page="resume">
 
         <header>
@@ -400,72 +383,50 @@ DBMS, and SDLC. Seeking entry-level roles as a Software Developer, Associate Dev
             <div class="icon-box">
               <ion-icon name="book-outline"></ion-icon>
             </div>
-
             <h3 class="h3">Education</h3>
           </div>
 
           <ol class="timeline-list">
 
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Master of computer Application</h4>
-
+              <h4 class="h4 timeline-item-title">Master of Computer Application</h4>
               <span>2023 — 2025</span>
-
               <p class="timeline-text">
-                Currently Pursuing Master of Computer Application from Vellore Institute of Technology,Vellore campus.<br><br>
-                Acquired CGPA-8.0
-
+                Currently pursuing Master of Computer Application from Vellore Institute of Technology, Vellore campus.<br><br>
+                Acquired CGPA – 8.0
               </p>
-
             </li>
 
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Bachelor of computer Application</h4>
-
+              <h4 class="h4 timeline-item-title">Bachelor of Computer Application</h4>
               <span>2020 — 2023</span>
-
               <p class="timeline-text">
-                Completed Bachelor of Computer Application from Vellore Institute of Technology,Vellore campus,Tamilnadu,India.<br><br>
-                Acquired CGPA-7.65
+                Completed Bachelor of Computer Application from Vellore Institute of Technology, Vellore campus, Tamilnadu, India.<br><br>
+                Acquired CGPA – 7.65
               </p>
-
             </li>
 
             <li class="timeline-item">
-
               <h4 class="h4 timeline-item-title">Grade 12</h4>
-
               <span>2019 — 2020</span>
-
               <p class="timeline-text">
-                Completed my Grade 12(Central Board of Secondary Education) from Sunbeam CBSE School,Vellore,Tamilnadu,India.
-                <br><br>
-                Acquired Percentage-67%
+                Completed Grade 12 (CBSE) from Sunbeam CBSE School, Vellore, Tamilnadu, India.<br><br>
+                Acquired Percentage – 67%
               </p>
-
             </li>
 
             <li class="timeline-item">
-
               <h4 class="h4 timeline-item-title">Grade 10</h4>
-
               <span>2017 — 2018</span>
-
               <p class="timeline-text">
-                Completed my Grade 10(Central Board of Secondary Education) from Sunbeam CBSE School,Vellore,Tamilnadu,India.
-                <br><br>
-                Acquired Percentage-61.4%
+                Completed Grade 10 (CBSE) from Sunbeam CBSE School, Vellore, Tamilnadu, India.<br><br>
+                Acquired Percentage – 61.4%
               </p>
-
             </li>
 
           </ol>
 
         </section>
-
-        
 
         <section class="skill">
 
@@ -473,21 +434,15 @@ DBMS, and SDLC. Seeking entry-level roles as a Software Developer, Associate Dev
 
           <ul class="skills-list content-card">
 
-            
-
-            
-            <li class="skills-item" onclick="var resumeUrl = 'https://drive.google.com/file/d/1z9BR6kHQL_5OJdreWujUc0U_hcbZjCOj/view?usp=sharing'; var anchorElement = document.createElement('a'); anchorElement.href = resumeUrl; anchorElement.download = 'Siddharth_Resume.pdf'; anchorElement.click();">
+            <li class="skills-item" style="cursor:pointer;"
+              onclick="window.open('https://drive.google.com/file/d/1z9BR6kHQL_5OJdreWujUc0U_hcbZjCOj/view?usp=sharing', '_blank')">
               <div class="service-icon-box">
-                  <img src="./assets/images/resume.svg" alt="design icon" width="50">
+                <img src="./assets/images/resume.svg" alt="Resume" width="50">
               </div>
-              <div class="service-content-box" style="display: flex; align-items: center; justify-content: center;">
-                  <h1 class="h4 service-item-title" style="margin: 0;">Click to Download Resume</h1>
+              <div class="service-content-box" style="display:flex; align-items:center; justify-content:center;">
+                <h4 class="h4 service-item-title" style="margin:0;">Click to Download Resume</h4>
               </div>
-          </li>
-          
-          
-
-            
+            </li>
 
           </ul>
 
@@ -496,29 +451,117 @@ DBMS, and SDLC. Seeking entry-level roles as a Software Developer, Associate Dev
       </article>
 
 
-        
-          
+      <!-- ═══════════════════════════════════
+           PROJECTS
+      ════════════════════════════════════ -->
+      <article class="projects" data-page="projects">
 
-            <button data-select>
+        <header>
+          <h2 class="h2 article-title">Projects</h2>
+        </header>
 
-            
+        <section class="service">
 
-             
+          <ul class="projects-grid">
 
-            </button>
+            <!-- PROJECT 1 — Applyt -->
+            <li class="project-card" onclick="window.open('https://github.com/Siddharthsid270702/Applyt', '_blank')">
+              <img
+                class="project-card-img"
+                src="./assets/images/applyt-logo.png"
+                alt="Applyt"
+                onerror="this.style.background='#2b2b2b';"
+              >
+              <div class="project-card-body">
+                <h4 class="project-card-title">Applyt</h4>
+                <p class="project-card-desc">Developed a full-stack job application tracking system using React, FastAPI, PostgreSQL, and Firebase Authentication with Google OAuth.
+Implemented REST APIs, CRUD operations, follow-ups, and application status tracking with secure per-user data isolation.
+Designed scalable backend architecture with FastAPI, SQL databases, and API integration for real-time job application management.</p>
+                <a class="project-card-link" href="https://github.com/Siddharthsid270702/Applyt" target="_blank" onclick="event.stopPropagation()">View Project →</a>
+                                <a class="project-card-link" href="https://www.linkedin.com/posts/siddharth2707_fresher-jobsearch-fullstackdeveloper-activity-7437538696511483904-02HQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADxU6-QB52ONXOnfbCRuwS7PtM6jU3HOk7w" target="_blank" onclick="event.stopPropagation()">View Project Demo Video →</a>
 
-            
-            
+              </div>
+            </li>
 
-          
+            <!-- PROJECT 2 — Rao Travels -->
+            <li class="project-card" onclick="window.open('https://github.com/Siddharthsid270702/RaoTravels', '_blank')">
+              <img
+                class="project-card-img"
+                src="./assets/images/Rao_logo.jpeg"
+                alt="Rao Travels"
+                onerror="this.style.background='#2b2b2b';"
+              >
+              <div class="project-card-body">
+                <h4 class="project-card-title">Rao Travels</h4>
+                <p class="project-card-desc">Designed and deployed a responsive travel services website using HTML, CSS, Bootstrap, jQuery, and GitHub Pages.
+Implemented mobile-first UI, intuitive navigation, and WhatsApp API click-to-chat booking integration.
+Optimized website performance and accessibility for online travel booking and customer engagement.</p>
+                <a class="project-card-link" href="https://github.com/Siddharthsid270702/RaoTravels" target="_blank" onclick="event.stopPropagation()">View Project →</a>
+                <a class="project-card-link" href="https://siddharthsid270702.github.io/RaoTravels/" target="_blank" onclick="event.stopPropagation()">View Live Project →</a>
+              </div>
+            </li>
 
-          
-  
-            
-          </section>
+            <!-- PROJECT 3 — AutoSense Pro -->
+            <li class="project-card" onclick="window.open('https://github.com/Siddharthsid270702/AutoSense_Pro', '_blank')">
+              <img
+                class="project-card-img"
+                src="./assets/images/AutoSensePro.png"
+                alt="AutoSense Pro"
+                onerror="this.style.background='#2b2b2b';"
+              >
+              <div class="project-card-body">
+                <h4 class="project-card-title">AutoSense Pro</h4>
+                <p class="project-card-desc">Built an IoT-based driver safety system using Python, YOLOv5, Arduino, and IoT sensors to detect multiple driving risks.
+Implemented drowsiness detection using 68 facial landmarks, traffic sign recognition with YOLOv5, alcohol detection, and engine temperature monitoring.
+Delivered real-time alerts and emergency notifications using computer vision, machine learning, and IOT.</p>
+                <a class="project-card-link" href="https://github.com/Siddharthsid270702/AutoSense_Pro" target="_blank" onclick="event.stopPropagation()">View Project →</a>
+                <a class="project-card-link" href="https://www.linkedin.com/posts/siddharth2707_driversafety-iot-machinelearning-activity-7287730321167433728-EZKf?utm_source=share&utm_medium=member_desktop&rcm=ACoAADxU6-QB52ONXOnfbCRuwS7PtM6jU3HOk7w" target="_blank" onclick="event.stopPropagation()">View Project Demo Video →</a>
+              </div>
+            </li>
 
+            <!-- PROJECT 4 — Omni Health Predictor -->
+            <li class="project-card" onclick="window.open('https://github.com/Siddharthsid270702/OmniHealth_Predictor', '_blank')">
+              <img
+                class="project-card-img"
+                src="./assets/images/omniHealth.png"
+                alt="Omni Health Predictor"
+                onerror="this.style.background='#2b2b2b';"
+              >
+              <div class="project-card-body">
+                <h4 class="project-card-title">Omni Health Predictor</h4>
+                <p class="project-card-desc">Developed a machine learning disease prediction web application using Python, Flask, Scikit-learn, Pandas, and NumPy.
+Trained and evaluated multiple ML models including Decision Tree, Random Forest, and Naïve Bayes on a Kaggle symptoms dataset covering multiple diseases.
+Random Forest outperformed other models, achieving 99.32% accuracy, and the UI displays predictions, symptom analysis, precautions, and severity levels.</p>
+                <a class="project-card-link" href="https://github.com/Siddharthsid270702/OmniHealth_Predictor" target="_blank" onclick="event.stopPropagation()">View Project →</a>
+              </div>
+            </li>
 
- 
+            <!-- PROJECT 5 — Portfolio -->
+            <li class="project-card" onclick="window.open('https://github.com/Siddharthsid270702/Siddharth_Portfolio', '_blank')">
+              <img
+                class="project-card-img"
+                src="./assets/images/Portfolio_Logo.png"
+                alt="Portfolio"
+                onerror="this.style.background='#2b2b2b';"
+              >
+              <div class="project-card-body">
+                <h4 class="project-card-title">Portfolio</h4>
+                <p class="project-card-desc">Developed a personal portfolio website to showcase projects, technical skills, certifications, and GitHub repositories.
+Built using HTML, CSS, JavaScript, and responsive web design principles for cross-device compatibility.
+Integrated project links, contact section, and professional profile information to highlight software development and machine learning work.</p>
+                <a class="project-card-link" href="https://github.com/Siddharthsid270702/Siddharth_Portfolio" target="_blank" onclick="event.stopPropagation()">View Project →</a>
+                
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+    </div>
+
   </main>
 
   <script src="./assets/js/script.js"></script>
@@ -527,5 +570,4 @@ DBMS, and SDLC. Seeking entry-level roles as a Software Developer, Associate Dev
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
-
 </html>
